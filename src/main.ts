@@ -1,1 +1,2 @@
-console.log("hello");
+import { renderApp } from "./runtime/app"
+renderApp();

@@ -1,26 +1,15 @@
 {
   "name": "vdom-lite",
-  "version": "1.0.0",
-  "description": "vDOM-lite  A lightweight JavaScript/TypeScript framework implementing a virtual DOM with reactive state and component-based architecture.",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/main.js",
-    "dev": "tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ywsfAS/vDOM-lite.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ywsfAS/vDOM-lite/issues"
-  },
-  "homepage": "https://github.com/ywsfAS/vDOM-lite#readme",
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1"
   }
 }
