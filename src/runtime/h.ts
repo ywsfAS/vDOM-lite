@@ -6,20 +6,24 @@ export function h(tag: string, props: object = {} , children : Array<vNode | nul
         tag: tag,
         props: props,
         children: mapTextNodes(withoutNulls(children)),
-        type: DOM_TYPES.ELEMENT
+        type: DOM_TYPES.ELEMENT,
+        el: null,
+        listeners : null
     }
 }
 
 export function hString(value : string) : vText {
     return {
         value: value,
-        type : DOM_TYPES.TEXT
+        type: DOM_TYPES.TEXT,
+        el : null
     }
 }
 export function hFragment(children : Array<vNode|null|string>)  : vFragment{
     return {
         children: mapTextNodes(withoutNulls(children)),
-        type: DOM_TYPES.FRAGMENT
+        type: DOM_TYPES.FRAGMENT,
+        el : null
 
     }
 }
