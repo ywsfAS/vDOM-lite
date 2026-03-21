@@ -1,6 +1,7 @@
-import { h, hFragment, lipsum } from "./runtime/h";
+import { h, hFragment, hString, lipsum } from "./runtime/h";
 import { LEVELS, MessageComponent } from "./components/Message";
 import { mountDOM } from "./core/mount-dom";
+import { destroyDOM } from "./core/destroy-dom";
 
 const vDOM = hFragment([h('h1', { class: 'title' }, ['My counter']), h('div', { class: 'container' },
 [
@@ -16,4 +17,9 @@ const messageBox = MessageComponent({ type: LEVELS.WARNING, message: "this my me
 console.log(messageBox);
 mountDOM(vDOMP, document.body);
 mountDOM(vDOM, document.body);
+mountDOM(messageBox, document.body);
 
+//Expose to browser
+(window as any).destroyDOM = destroyDOM;
+(window as any).hString = hString;
+(window as any).mountDOM = mountDOM;

@@ -15,3 +15,8 @@ export function addEventListeners(element: HTMLElement, events: Record<string, E
     })
     return listeners;
 }
+export function removeEventListeners(element: HTMLElement, listeners: Record<string, EventListener> = {}) {
+    Object.entries(listeners).forEach( ([name,handler]) => {
+        element.removeEventListener(name, handler);
+    })
+}
