@@ -3,7 +3,7 @@ import { Dispatcher } from "../core/dispatcher";
 import { mountDOM } from "../core/mount-dom";
 import { type TState , type TView , type vNode } from "../types/types";
 export function createApp({ state, view, reducers = {} }: { state: TState, view: TView, reducers : Record<string,Function>}) {
-    let parentEl = null;
+    let parentEl : HTMLElement | null = null;
     let vdom: vNode | null = null;
     const dispatcher = new Dispatcher();
     let subscriptions = [dispatcher.afterCommands(renderApp)];
@@ -14,18 +14,26 @@ export function createApp({ state, view, reducers = {} }: { state: TState, view:
         });
         subscriptions.push(unsub);
     }
+    // passed to components to dispatch commands 
+    function emit(commandName : string , payLoad : Record<string,any>) {
+        dispatcher.dispatch(commandName,payLoad);
+    }
     function renderApp(){
-        if (vdom) {
-            destroyDOM(vdom);
-        }
-        vdom = view(state);
-        mountDOM(vdom, parentEl!);
+        const newVdom = view(state,emit);
+        // vdom = patchDOM(newVdom,vdom,parentEl); //diff algorithm
     }
     return { 
         mount(_parentEl : HTMLElement){
             parentEl = _parentEl;
-            renderApp();
+            vdom = view(state, emit);
+            mountDOM(vdom, parentEl);
+        },
+        unmount() {
+            destroyDOM(vdom!);
+            vdom = null;
+            subscriptions.forEach((unsubHandler) => unsubHandler());
         }
     }
+
 }
     

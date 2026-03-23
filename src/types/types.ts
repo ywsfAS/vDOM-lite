@@ -30,4 +30,4 @@ export type props = {
 
 export type vNode = vElement | vFragment | vText;
 export type TState = Record<string, any>;
-export type TView = (s: TState) => vNode;
+export type TView = (s: TState , e? : Function) => vNode;
