@@ -29,36 +29,36 @@ This project uses TypeScript throughout to maintain type safety and clarity.
 
 ```
 vDOM-lite/
-?
-??? src/
-?   ??? core/
-?   ?   ??? attributes.ts       # Handles attributes and reactivity
-?   ?   ??? destroy-dom.ts      # Cleans up DOM nodes
-?   ?   ??? diff.ts             # Diffing algorithms
-?   ?   ??? dispatcher.ts       # Event dispatcher
-?   ?   ??? event.ts            # Event helpers
-?   ?   ??? mount-dom.ts        # Mounts virtual nodes to real DOM
-?   ?
-?   ??? runtime/
-?   ?   ??? app.ts              # Main app function
-?   ?   ??? h.ts                # Functions to create virtual nodes (h, hFragment)
-?   ?
-?   ??? types/
-?   ?   ??? type.ts             # Type definitions (VNode, VFragment, VText, etc.)
-?   ?
-?   ??? utils/
-?   ?   ??? array.ts            # Array helpers and diffing
-?   ?   ??? object.ts           # Object helpers and diffing
-?   ?
-?   ??? components/
-?   ?   ??? Message.ts          # Example component
-?   ?
-?   ??? main.ts                 # Entry point
-?
-??? dist/                       # Compiled JavaScript output
-??? package.json
-??? tsconfig.json
-??? README.md
+│
+├── src/
+│   ├── core/
+│   │   ├── attributes.ts       # Handles attributes and reactivity
+│   │   ├── destroy-dom.ts      # Cleans up DOM nodes
+│   │   ├── diff.ts             # Diffing algorithms
+│   │   ├── dispatcher.ts       # Event dispatcher
+│   │   ├── event.ts            # Event helpers
+│   │   └── mount-dom.ts        # Mounts virtual nodes to real DOM
+│   │
+│   ├── runtime/
+│   │   ├── app.ts              # Main app function
+│   │   └── h.ts                # Functions to create virtual nodes (h, hFragment)
+│   │
+│   ├── types/
+│   │   └── type.ts             # Type definitions (VNode, VFragment, VText, etc.)
+│   │
+│   ├── utils/
+│   │   ├── array.ts            # Array helpers and diffing
+│   │   └── object.ts           # Object helpers and diffing
+│   │
+│   ├── components/
+│   │   └── Message.ts          # Example component
+│   │
+│   ├── main.ts                 # Entry point
+│
+├── dist/                       # Compiled JavaScript output
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
 ## How It Works
