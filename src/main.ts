@@ -15,9 +15,6 @@ console.log(vDOM);
 console.log(vDOMP);
 const messageBox = MessageComponent({ type: LEVELS.WARNING, message: "this my message !" });
 console.log(messageBox);
-mountDOM(vDOMP, document.body);
-mountDOM(vDOM, document.body);
-mountDOM(messageBox, document.body);
 
 //Expose to browser
 (window as any).destroyDOM = destroyDOM;

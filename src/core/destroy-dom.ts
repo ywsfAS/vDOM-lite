@@ -4,7 +4,7 @@ export function destroyDOM(node : vNode) {
     const { type } = node;
     switch (type) {
         case DOM_TYPES.ELEMENT: {
-            //destroyElementNode()
+            destroyElementNode(node as vElement);
             break;
         }
         case DOM_TYPES.TEXT: {

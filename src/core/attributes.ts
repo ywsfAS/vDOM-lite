@@ -24,8 +24,11 @@ export function setAttribute(element : HTMLElement , property : string , value :
         element.setAttribute(property, value);
     }
 }
-export function setStyle(element : HTMLElement , property : any , value : any) {
+export function setStyle(element: HTMLElement, property: any, value: any) {
     element.style[property] = value;
+}
+export function removeAttribute(element : HTMLElement , attr : string) {
+    element.removeAttribute(attr);
 }
 export function removeStyle(element : HTMLElement , property : any ) {
     element.style[property] = "";

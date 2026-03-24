@@ -1,8 +1,12 @@
 
 export function addEventListener(eventName: string, handler: EventListener, element: HTMLElement): EventListener
 {
-    element.addEventListener(eventName, handler);
-    return handler
+    function boundHandler(event : Event) {
+        
+        handler(event);
+    }
+    element.addEventListener(eventName, boundHandler);
+    return boundHandler;
 }
 
 export function addEventListeners(element: HTMLElement, events: Record<string, EventListener> = {}) : Record<string,EventListener> {

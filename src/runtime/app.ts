@@ -19,14 +19,14 @@ export function createApp({ state, view, reducers = {} }: { state: TState, view:
         dispatcher.dispatch(commandName,payLoad);
     }
     function renderApp(){
-        const newVdom = view(state,emit);
+        //const newVdom = view(state,emit);
         // vdom = patchDOM(newVdom,vdom,parentEl); //diff algorithm
     }
     return { 
         mount(_parentEl : HTMLElement){
             parentEl = _parentEl;
             vdom = view(state, emit);
-            mountDOM(vdom, parentEl);
+          //  mountDOM(vdom, parentEl);
         },
         unmount() {
             destroyDOM(vdom!);

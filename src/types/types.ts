@@ -7,7 +7,7 @@ export enum DOM_TYPES {
 }
 export interface vElement {
     tag: string,
-    props: Object,
+    props: props,
     children: vNode[],
     type: DOM_TYPES,
     el: HTMLElement | null,
